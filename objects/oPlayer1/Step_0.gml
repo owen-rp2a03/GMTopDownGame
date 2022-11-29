@@ -29,12 +29,16 @@ if (l) && !(u || d)	//left
 {
 	x1 += -spd;
 	x = round(x1);
+	
+	rot = 180;
 }
 
 if (r) && !(u || d)	//right
 {
 	x1 += spd;
 	x = round(x1);
+	
+	rot = 0;
 	
 	
 }
@@ -44,6 +48,8 @@ if (u) && !(l || r)	//up
 	y1 += -spd;
 	y = round(y1);
 	
+	rot = 90;
+	
 	
 }
 
@@ -51,6 +57,8 @@ if (d) && !(l || r)	//down
 {
 	y1 += spd;
 	y = round(y1);
+	
+	rot = 270;
 	
 	
 }
