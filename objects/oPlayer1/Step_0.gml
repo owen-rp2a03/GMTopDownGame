@@ -24,20 +24,28 @@ d = keyboard_check(ord("S"))
 	|| gamepad_button_check(0, gp_padd) //dpad
 	|| (global.axislv > .5); //nes controller
 
-
+//canmove = 1;
 moving = 0;
 setrot = 1;
 
 shootdir = round(point_direction(x, y, oPlrDir.x, oPlrDir.y)/22.5)*22.5;
 
-x = x1
-y = round(y1 / 1.15)
 
-//image_yscale = ;
+x = x1
+y = y1 
+
+
+/*
+y = round(y1 / 1.45)
+
+image_xscale = ((y-50)/80);
+
+image_yscale = image_xscale;*/
 
 
 // UP DOWN LEFT RIGHT
-if (l) && !(u || d)	//left
+if(canmove == 1){
+if (l) && !(u || d)	&& !(place_meeting(x - 3, y, oCollisionStop))	//left
 {
 	moving = 5;
 	moving1 = 5;
@@ -47,9 +55,13 @@ if (l) && !(u || d)	//left
 	
 	rot = 180;
 	
+	
+	//move_contact_solid(180, -1);
+	
+	
 }
 
-if (r) && !(u || d)	//right
+if (r) && !(u || d)	&& !(place_meeting(x + 3, y, oCollisionStop))	//right
 {
 	moving = 1;
 	moving1 = 1;
@@ -61,7 +73,7 @@ if (r) && !(u || d)	//right
 	
 }
 
-if (u) && !(l || r)	//up
+if (u) && !(l || r)	&& !(place_meeting(x, y - 3, oCollisionStop))	//up
 {
 	moving = 3;
 	moving1 = 3;
@@ -75,7 +87,7 @@ if (u) && !(l || r)	//up
 	
 }
 
-if (d) && !(l || r)	//down
+if (d) && !(l || r) && !(place_meeting(x + 3, y, oCollisionStop))	//down
 {
 	moving = 7;
 	moving1 = 7;
@@ -91,7 +103,7 @@ if (d) && !(l || r)	//down
 
 
 // DIAGONALS
-if (l) && (u) && !(r)	//left up
+if (l) && (u) && !(r) && !(place_meeting(x - 3, y - 3, oCollisionStop))		//left up
 {
 	moving = 4;
 	moving1 = 4;
@@ -106,7 +118,7 @@ if (l) && (u) && !(r)	//left up
 	
 	
 }
-if (l) && (d) && !(r)	//left down
+if (l) && (d) && !(r) && !(place_meeting(x - 3, y + 3, oCollisionStop))	//left down
 {
 	moving = 6;
 	moving1 = 6;
@@ -121,7 +133,7 @@ if (l) && (d) && !(r)	//left down
 	
 	
 }
-if (r) && (u) && !(l)//right up
+if (r) && (u) && !(l) && !(place_meeting(x + 3, y - 3, oCollisionStop))	//right up
 {
 	moving = 2;
 	moving1 = 2;
@@ -136,7 +148,7 @@ if (r) && (u) && !(l)//right up
 	
 	
 }
-if (r) && (d) && !(l)	//right down
+if (r) && (d) && !(l) && !(place_meeting(x + 3, y + 3, oCollisionStop))	//right down
 {
 	moving = 8;
 	moving1 = 8;
@@ -150,6 +162,7 @@ if (r) && (d) && !(l)	//right down
 	
 	
 	
+}
 }
 
 var a;		//a - 

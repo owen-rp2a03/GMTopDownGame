@@ -11,7 +11,7 @@ draw_self();
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y_relative" "1"
 /// @DnDArgument : "caption" ""
-/// @DnDArgument : "var" "shootdir"
+/// @DnDArgument : "var" "image_xscale"
 
 
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite_Transformed
