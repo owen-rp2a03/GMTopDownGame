@@ -24,81 +24,126 @@ d = keyboard_check(ord("S"))
 	|| gamepad_button_check(0, gp_padd) //dpad
 	|| (global.axislv > .5); //nes controller
 
+
+moving = 0;
+setrot = 1;
+
+
+
 // UP DOWN LEFT RIGHT
 if (l) && !(u || d)	//left
 {
+	moving = 5;
+	moving1 = 5;
+	
 	x1 += -spd;
 	x = round(x1);
 	
 	rot = 180;
+	
 }
 
 if (r) && !(u || d)	//right
 {
+	moving = 1;
+	moving1 = 1;
+	
 	x1 += spd;
 	x = round(x1);
 	
 	rot = 0;
 	
-	
 }
 
 if (u) && !(l || r)	//up
 {
+	moving = 3;
+	moving1 = 3;
+	
 	y1 += -spd;
 	y = round(y1);
 	
 	rot = 90;
 	
 	
+	
 }
 
 if (d) && !(l || r)	//down
 {
+	moving = 7;
+	moving1 = 7;
+	
 	y1 += spd;
 	y = round(y1);
 	
 	rot = 270;
 	
 	
+	
 }
+
 
 // DIAGONALS
 if (l) && (u) && !(r)	//left up
 {
+	moving = 4;
+	moving1 = 4;
+	
 	x1 += -spd*.707;
 	y1 += -spd*.707;
 	x = round(x1);
 	y = round(y1);
 	
 	rot = 135;
+	
+	
+	
 }
 if (l) && (d) && !(r)	//left down
 {
+	moving = 6;
+	moving1 = 6;
+	
 	x1 += -spd*.707;
 	y1 += spd*.707;
 	x = round(x1);
 	y = round(y1);
 	
-	rot = 135;
+	rot = 225;
+	
+	
+	
 }
 if (r) && (u) && !(l)//right up
 {
+	moving = 2;
+	moving1 = 2;
+	
 	x1 += spd*.707;
 	y1 += -spd*.707;
 	x = round(x1);
 	y = round(y1);
 	
 	rot = 45;
+	
+	
+	
 }
 if (r) && (d) && !(l)	//right down
 {
+	moving = 8;
+	moving1 = 8;
+	
 	x1 += spd*.707;
 	y1 += spd*.707;
 	x = round(x1);
 	y = round(y1);
 	
 	rot = 315;
+	
+	
+	
 }
 
 var a;		//a - 
@@ -134,8 +179,6 @@ if (st)
 {
 	
 }
-
-
 
 
 

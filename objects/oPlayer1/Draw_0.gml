@@ -3,12 +3,23 @@
 /// @DnDHash : 5F4249DC
 draw_self();
 
+/// @DnDAction : YoYo Games.Drawing.Draw_Value
+/// @DnDVersion : 1
+/// @DnDHash : 49727DF5
+/// @DnDDisabled : 1
+/// @DnDArgument : "x" "-32"
+/// @DnDArgument : "x_relative" "1"
+/// @DnDArgument : "y_relative" "1"
+/// @DnDArgument : "caption" ""
+/// @DnDArgument : "var" "point_direction(x, y, oPlrDir.x, oPlrDir.y)"
+
+
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite_Transformed
 /// @DnDVersion : 1
 /// @DnDHash : 5333BA5D
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y_relative" "1"
-/// @DnDArgument : "rot" "rot"
+/// @DnDArgument : "rot" "round(point_direction(x, y, oPlrDir.x, oPlrDir.y)/22.5)*22.5"
 /// @DnDArgument : "sprite" "sTest3"
 /// @DnDSaveInfo : "sprite" "sTest3"
-draw_sprite_ext(sTest3, 0, x + 0, y + 0, 1, 1, rot, $FFFFFF & $ffffff, 1);
+draw_sprite_ext(sTest3, 0, x + 0, y + 0, 1, 1, round(point_direction(x, y, oPlrDir.x, oPlrDir.y)/22.5)*22.5, $FFFFFF & $ffffff, 1);
