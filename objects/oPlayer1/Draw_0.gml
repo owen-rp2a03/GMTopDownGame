@@ -11,7 +11,7 @@ draw_self();
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y_relative" "1"
 /// @DnDArgument : "caption" ""
-/// @DnDArgument : "var" "point_direction(x, y, oPlrDir.x, oPlrDir.y)"
+/// @DnDArgument : "var" "shootdir"
 
 
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite_Transformed
@@ -19,7 +19,7 @@ draw_self();
 /// @DnDHash : 5333BA5D
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y_relative" "1"
-/// @DnDArgument : "rot" "round(point_direction(x, y, oPlrDir.x, oPlrDir.y)/22.5)*22.5"
+/// @DnDArgument : "rot" "shootdir"
 /// @DnDArgument : "sprite" "sTest3"
 /// @DnDSaveInfo : "sprite" "sTest3"
-draw_sprite_ext(sTest3, 0, x + 0, y + 0, 1, 1, round(point_direction(x, y, oPlrDir.x, oPlrDir.y)/22.5)*22.5, $FFFFFF & $ffffff, 1);
+draw_sprite_ext(sTest3, 0, x + 0, y + 0, 1, 1, shootdir, $FFFFFF & $ffffff, 1);
