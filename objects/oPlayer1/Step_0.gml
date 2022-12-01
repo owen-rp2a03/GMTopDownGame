@@ -87,7 +87,7 @@ if (u) && !(l || r)	&& !(place_meeting(x, y - 3, oCollisionStop))	//up
 	
 }
 
-if (d) && !(l || r) && !(place_meeting(x + 3, y, oCollisionStop))	//down
+if (d) && !(l || r) && !(place_meeting(x, y + 3, oCollisionStop))	//down
 {
 	moving = 7;
 	moving1 = 7;

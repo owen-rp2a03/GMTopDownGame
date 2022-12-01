@@ -34,3 +34,26 @@ if	keyboard_check(vk_f7)
 }
 
 
+
+////ROOM CONTROL
+global.tilecheckx = 0;
+global.tilechecky = 0;
+
+if(!(global.tilecheckx >= room_width))
+{
+	var l4A38D1E8_0 = layer_tilemap_get_id("Tiles1");
+	global.tile = undefined;
+	if(l4A38D1E8_0 > -1) {
+		var l4A38D1E8_1 = tilemap_get_at_pixel(l4A38D1E8_0, global.tilecheckx, global.tilechecky);
+		if(l4A38D1E8_1 > -1) global.tile = tile_get_index(l4A38D1E8_1);
+	}
+
+	if(global.tile == 0)
+	{
+		instance_create_layer(global.tilecheckx, global.tilechecky, "Instances", oCollisionStop);
+	
+		global.tilecheckx += 16;
+	}
+}
+
+
