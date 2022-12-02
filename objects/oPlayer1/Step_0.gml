@@ -24,6 +24,15 @@ d = keyboard_check(ord("S"))
 	|| gamepad_button_check(0, gp_padd) //dpad
 	|| (global.axislv > .5); //nes controller
 
+
+var b;		//b - shoot
+b = keyboard_check(ord("N"))
+	|| gamepad_button_check(0, gp_face2); //nes controller
+
+var a;		//a - jump
+a = keyboard_check(vk_space)
+	|| gamepad_button_check(0, gp_face1); //nes controller
+
 //canmove = 1;
 moving = 0;
 setrot = 1;
@@ -103,7 +112,7 @@ if (d) && !(l || r) && !(place_meeting(x, y + 3, oCollisionStop))	//down
 
 
 // DIAGONALS
-if (l) && (u) && !(r) && !(place_meeting(x - 3, y - 3, oCollisionStop))		//left up
+if (l) && (u) && !(r) && !(place_meeting(x - 3, y - 3, oCollisionStop))	//left up
 {
 	moving = 4;
 	moving1 = 4;
@@ -165,20 +174,20 @@ if (r) && (d) && !(l) && !(place_meeting(x + 3, y + 3, oCollisionStop))	//right 
 }
 }
 
-var a;		//a - 
-a = keyboard_check(vk_space)
 	
 if (a)
 {
 
 }
 
-var b;		//b - 
-b = keyboard_check(ord("N"))
-	|| keyboard_check(vk_space)
-	|| gamepad_button_check(0, gp_face2); //nes controller
-if (b) {	//
+
+if (b)
+{
+	if(instance_number(oBullet) < 4) //check if too many bullet sprites
+	{
+		instance_create_layer(x + -4, y + 1, "Instances", oBullet);
 	
+	}
 }
 
 

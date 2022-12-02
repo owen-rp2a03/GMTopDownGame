@@ -10,8 +10,7 @@ draw_self();
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y_relative" "1"
 /// @DnDArgument : "caption" ""
-/// @DnDArgument : "var" "global.tile"
-draw_text(x + -32, y + 0,  + string(global.tile));
+draw_text(x + -32, y + 0,  + "");
 
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite_Transformed
 /// @DnDVersion : 1
@@ -19,6 +18,6 @@ draw_text(x + -32, y + 0,  + string(global.tile));
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y_relative" "1"
 /// @DnDArgument : "rot" "shootdir"
-/// @DnDArgument : "sprite" "sTest3"
-/// @DnDSaveInfo : "sprite" "sTest3"
-draw_sprite_ext(sTest3, 0, x + 0, y + 0, 1, 1, shootdir, $FFFFFF & $ffffff, 1);
+/// @DnDArgument : "sprite" "sTestArrow"
+/// @DnDSaveInfo : "sprite" "sTestArrow"
+draw_sprite_ext(sTestArrow, 0, x + 0, y + 0, 1, 1, shootdir, $FFFFFF & $ffffff, 1);
