@@ -36,6 +36,7 @@ a = keyboard_check(vk_space)
 //canmove = 1;
 moving = 0;
 setrot = 1;
+dirlock = 0;
 
 shootdir = round(point_direction(x, y, oPlrDir.x, oPlrDir.y)/22.5)*22.5;
 
@@ -177,16 +178,17 @@ if (r) && (d) && !(l) && !(place_meeting(x + 3, y + 3, oCollisionStop))	//right 
 	
 if (a)
 {
-
+	dirlock = 1
 }
 
 
-if (b)
+if (b)		//b button - shoot
 {
-	if(instance_number(oBullet) < 4) //check if too many bullet sprites
+	if(instance_number(oBullet) < 4) && (shootdelay = 0) //check if too many bullet sprites
 	{
-		instance_create_layer(x + -4, y + 1, "Instances", oBullet);
-	
+		instance_create_layer(x, y, "Instances", oBullet);
+		alarm[0] = 4;
+		shootdelay = 1;
 	}
 }
 
