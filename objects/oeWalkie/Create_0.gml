@@ -1,12 +1,8 @@
 /// @description 
 
 
-//draw_self()
 
-
-
-
-
+alarm[0] = 30
 
 
 

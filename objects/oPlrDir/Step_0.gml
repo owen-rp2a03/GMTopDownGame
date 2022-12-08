@@ -57,23 +57,25 @@ if!(oPlayer1.moving == 0) && (oPlayer1.dirlock = 0){
 		x += lengthdir_x(spd,direction);
 		y += lengthdir_y(spd,direction);
 	}
+	
+	x1 = (x - oPlayer1.x);
+	y1 = (y - oPlayer1.y);
+	
 }
 
 
-x1 = oPlayer1.x + (x - oPlayer1.x);
-y1 = oPlayer1.y + (y - oPlayer1.y);
 
 if(oPlayer1.dirlock = 1)
 {
 	//pauseorbit = 1;
-	x = x1;
-	y = y1;
+	x = x1 + oPlayer1.x;
+	y = y1 + oPlayer1.y;
 	
 }
 
 if(pauseorbit = 1)
 {
-	oPlayer1.dirlock = 2;
+	
 }
 
 

@@ -26,11 +26,11 @@ d = keyboard_check(ord("S"))
 
 
 var b;		//b - shoot
-b = keyboard_check(ord("N"))
+b = keyboard_check(vk_space)
 	|| gamepad_button_check(0, gp_face2); //nes controller
 
 var a;		//a - jump
-a = keyboard_check(vk_space)
+a = keyboard_check(ord("N"))
 	|| gamepad_button_check(0, gp_face1); //nes controller
 
 //canmove = 1;
